@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         {/* Your favicon */}
-        <link rel="icon" href="/favicon.ico" />
+         <link rel="icon" type="image/png" href="/images/tab-icon.png" />
         {/* (Optional) A page title will show if you navigate directly to "/" */}
         <title>Joe Capon Designs</title>
       </Head>
