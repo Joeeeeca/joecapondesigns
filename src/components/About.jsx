@@ -1,7 +1,30 @@
 // src/components/About.jsx
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function About({ className = '' }) {
+  useEffect(() => {
+    const aboutFormButton = document.getElementById('about-form-button');
+    const handleClick = () => {
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'about_form_click', {
+          event_category: 'cta',
+          event_label: 'About Form Button',
+          value: 1,
+        });
+      }
+    };
+  
+    if (aboutFormButton) {
+      aboutFormButton.addEventListener('click', handleClick);
+    }
+  
+    return () => {
+      if (aboutFormButton) {
+        aboutFormButton.removeEventListener('click', handleClick);
+      }
+    };
+  }, []);
+  
   return (
     <section
       id="about"
@@ -60,6 +83,7 @@ export default function About({ className = '' }) {
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSd1WgbA33GUhJsmRPUL43GUk-WPjyedbvb7iZy0py9uGdWgdw/viewform"
           target="_blank"
+          id="about-form-button"
           className="
             inline-block   text-dark  px-4 md:px-8 py-3 rounded-full bg-accent
              font-semibold transition
