@@ -1,7 +1,29 @@
-// src/components/Contact.jsx
-import React from 'react';
+  // src/components/Contact.jsx
+  import React, { useEffect } from 'react';
 
-export default function Contact({ className = '' }) {
+  export default function Contact({ className = '' }) {
+    useEffect(() => {
+      const emailLink = document.getElementById('email-link');
+      const handleClick = () => {
+        if (typeof window !== 'undefined' && window.gtag) {
+          window.gtag('event', 'contact_email_click', {
+            event_category: 'contact',
+            event_label: 'Email Link',
+            value: 1,
+          });
+        }
+      };
+  
+      if (emailLink) {
+        emailLink.addEventListener('click', handleClick);
+      }
+  
+      return () => {
+        if (emailLink) {
+          emailLink.removeEventListener('click', handleClick);
+        }
+      };
+    }, []);
   return (
     <section
       id="contact"
@@ -46,6 +68,7 @@ export default function Contact({ className = '' }) {
           Or email me directly at{' '}
           <a
             href="mailto:joecapon101@gmail.com"
+            id="email-link"
             target="_blank"
             className="text-accent font-medium hover:underline"
           >
