@@ -4,8 +4,9 @@
   export default function Contact({ className = '' }) {
     useEffect(() => {
       const emailLink = document.getElementById('email-link');
-      const handleClick = () => {
-        console.log('✅ GA4 email click event fired');
+      const projectFormLink = document.getElementById('project-form-link');
+    
+      const handleEmailClick = () => {
         if (typeof window !== 'undefined' && window.gtag) {
           window.gtag('event', 'contact_email_click', {
             event_category: 'contact',
@@ -14,15 +15,23 @@
           });
         }
       };
-  
-      if (emailLink) {
-        emailLink.addEventListener('click', handleClick);
-      }
-  
-      return () => {
-        if (emailLink) {
-          emailLink.removeEventListener('click', handleClick);
+    
+      const handleFormClick = () => {
+        if (typeof window !== 'undefined' && window.gtag) {
+          window.gtag('event', 'project_form_click', {
+            event_category: 'contact',
+            event_label: 'Project Form Button',
+            value: 1,
+          });
         }
+      };
+    
+      emailLink?.addEventListener('click', handleEmailClick);
+      projectFormLink?.addEventListener('click', handleFormClick);
+    
+      return () => {
+        emailLink?.removeEventListener('click', handleEmailClick);
+        projectFormLink?.removeEventListener('click', handleFormClick);
       };
     }, []);
   return (
@@ -47,6 +56,7 @@
 
         {/* Primary CTA */}
         <a
+        id="project-form-link"
           href="https://docs.google.com/forms/d/e/1FAIpQLSd1WgbA33GUhJsmRPUL43GUk-WPjyedbvb7iZy0py9uGdWgdw/viewform"
           target="_blank"
           rel="noopener noreferrer"
