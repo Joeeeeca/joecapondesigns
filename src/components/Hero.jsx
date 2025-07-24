@@ -120,6 +120,7 @@ className="md:w-1/2 flex justify-center">
     alt="Portrait of Joe Capon"
     width="320"
     height="320"
+    priority
     loading="lazy"
     decoding="async"
     className="

@@ -19,10 +19,6 @@ async function generateSitemap() {
 
   // Write sitemap to public folder
   createWriteStream('./public/sitemap.xml').write(xmlData);
-  console.log('✅ Sitemap successfully created!');
 }
 
-generateSitemap().catch((err) => {
-  console.error('❌ Error generating sitemap:', err);
-});
 
