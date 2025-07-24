@@ -13,11 +13,10 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        {/* Basic */}
+        {/* Primary Meta Tags */}
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Joe Capon Designs — Freelance Web Developer</title>
-
+        <title>Joe Capon Designs — Freelance Web Developer</title>
         <meta
           name="description"
           content="I’m Joe Capon, a freelance web developer crafting fast, accessible, modern websites. Let’s build a beautiful web experience together."
@@ -30,27 +29,49 @@ export default function App({ Component, pageProps }) {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://joecapondesigns.com/" />
         <link rel="icon" type="image/png" href="/images/tab-icon.png" />
+        <meta name="theme-color" content="#1F2937" />
 
-        {/* Open Graph */}
+        {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://joecapondesigns.com/" />
-        <meta property="og:title" content="Joe Capon Designs — Freelance Web Developer" />
-        <meta property="og:description" content="I’m Joe Capon, a freelance web developer crafting fast, accessible, modern websites." />
+        <meta property="og:title" content="Joe Capon Designs — Freelance Web Developer" />
+        <meta
+          property="og:description"
+          content="I’m Joe Capon, a freelance web developer crafting fast, accessible, modern websites."
+        />
         <meta property="og:image" content="https://joecapondesigns.com/images/social-preview.png" />
-        <meta property="og:site_name" content="Joe Capon Designs" />
+        <meta property="og:site_name" content="Joe Capon Designs" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@TheGamer_reacts" />
         <meta name="twitter:creator" content="@TheGamer_reacts" />
-        <meta name="twitter:title" content="Joe Capon Designs — Freelance Web Developer" />
-        <meta name="twitter:description" content="Let’s build a beautiful web experience together." />
+        <meta name="twitter:title" content="Joe Capon Designs — Freelance Web Developer" />
+        <meta
+          name="twitter:description"
+          content="Let’s build a beautiful web experience together."
+        />
         <meta name="twitter:image" content="https://joecapondesigns.com/images/social-preview.png" />
 
-        {/* Theme color */}
-        <meta name="theme-color" content="#1F2937" />
+        {/* Structured Data (Schema.org) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Joe Capon",
+              url: "https://joecapondesigns.com",
+              jobTitle: "Freelance Web Developer",
+              sameAs: [
+                "https://github.com/joeeeeca",
+                "https://www.linkedin.com/in/your-profile" // Replace if applicable
+              ],
+            }),
+          }}
+        />
 
-        {/* Google Analytics (gtag.js) */}
+        {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-KBZBY2LHRF"></script>
         <script
           dangerouslySetInnerHTML={{

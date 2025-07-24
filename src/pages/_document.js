@@ -1,21 +1,21 @@
-import { Html, Head, Main, NextScript } from "next/document";
+// src/pages/_document.js
+import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
     <Html lang="en" className="scroll-smooth">
       <Head>
-        {/* Preload Google Fonts for performance */}
+        {/* Preconnect to Google Fonts (if used) */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;500&display=swap" 
-          rel="stylesheet"
-        />
+
+        {/* Optional: PWA / Manifest support */}
+        {/* <link rel="manifest" href="/site.webmanifest" /> */}
       </Head>
       <body className="antialiased">
         <Main />
         <NextScript />
       </body>
     </Html>
-  );
+  )
 }
