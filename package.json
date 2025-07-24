@@ -13,8 +13,12 @@
     "framer-motion": "^12.23.7",
     "next": "15.3.5",
     "react": "^19.0.0",
+<<<<<<< HEAD
     "react-dom": "^19.0.0",
     "sitemap": "^8.0.0"
+=======
+    "react-dom": "^19.0.0"
+>>>>>>> c2900e06738e4b0a3ee8be71cbd9c580f58d752d
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
