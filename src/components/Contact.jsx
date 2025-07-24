@@ -5,6 +5,7 @@
     useEffect(() => {
       const emailLink = document.getElementById('email-link');
       const handleClick = () => {
+        console.log('✅ GA4 email click event fired');
         if (typeof window !== 'undefined' && window.gtag) {
           window.gtag('event', 'contact_email_click', {
             event_category: 'contact',
