@@ -1,13 +1,24 @@
-// src/pages/_app.js  (or put inside pages/_document.js → <Head>)
 import Head from 'next/head'
+import Script from 'next/script'
 import '../styles/globals.css'
 import { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
+const GA_ID = 'G-KBZBY2LHRF'
+
 export default function App({ Component, pageProps }) {
   useEffect(() => {
     AOS.init({ once: true, duration: 600 })
+
+    if (typeof window !== 'undefined' && GA_ID) {
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        window.dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', GA_ID)
+    }
   }, [])
 
   return (
@@ -32,9 +43,9 @@ export default function App({ Component, pageProps }) {
         <link rel="canonical" href="https://joecapondesigns.com/" />
 
         {/* Favicon */}
-         <link rel="icon" type="image/png" href="/images/tab-icon.png" />
+        <link rel="icon" type="image/png" href="/images/tab-icon.png" />
 
-        {/* Open Graph / Facebook & LinkedIn */}
+        {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://joecapondesigns.com/" />
         <meta property="og:title" content="Joe Capon Designs — Freelance Web Developer" />
@@ -45,7 +56,7 @@ export default function App({ Component, pageProps }) {
         <meta property="og:image" content="https://joecapondesigns.com/images/social-preview.png" />
         <meta property="og:site_name" content="Joe Capon Designs" />
 
-        {/* Twitter Card */}
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@TheGamer_reacts" />
         <meta name="twitter:creator" content="@TheGamer_reacts" />
@@ -56,12 +67,15 @@ export default function App({ Component, pageProps }) {
         />
         <meta name="twitter:image" content="https://joecapondesigns.com/images/social-preview.png" />
 
-        {/* Theme color for mobile address bar */}
+        {/* Theme */}
         <meta name="theme-color" content="#1F2937" />
-
-        {/* (Optional) PWA manifest */}
-        {/* <link rel="manifest" href="/site.webmanifest" /> */}
       </Head>
+
+      {/* Google Analytics Script */}
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+      />
 
       <Component {...pageProps} />
     </>
