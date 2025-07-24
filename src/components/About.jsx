@@ -84,6 +84,7 @@ export default function About({ className = '' }) {
           href="https://docs.google.com/forms/d/e/1FAIpQLSd1WgbA33GUhJsmRPUL43GUk-WPjyedbvb7iZy0py9uGdWgdw/viewform"
           target="_blank"
           id="about-form-button"
+           aria-label="Click to tell me about your project"
           className="
             inline-block   text-dark  px-4 md:px-8 py-3 rounded-full bg-accent
              font-semibold transition

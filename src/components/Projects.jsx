@@ -1,27 +1,37 @@
 // src/components/Projects.jsx
 import React from 'react';
+import Image from 'next/image';
 
 export default function Projects({ className = '' }) {
   const projects = [
     {
-      src: '/images/website-1.png',
+      src: '/images/website-1.webp',
       alt: 'Guitar lessons platform on multiple devices',
+      width:"600",
+      height:"400",
+      loading:"lazy",
       title: 'George\'s Guitar Lessons',
       description:
         'A learning platform offering structured, step-by-step guitar lessons, practice tools, and progress tracking for players of all levels.',
       url: 'https://georgecaponguitarlessons.com/',
     },
     {
-      src: '/images/website-2.png',
+      src: '/images/website-2.webp',
       alt: 'Sports training site on multiple devices',
+      width:"600",
+      height:"400",
+      loading:"lazy",
       title: 'Sports Mind Mastered',
       description:
         'A mental‑training site delivering visualization exercises, motivational content, and focus drills to help athletes achieve peak performance.',
       url: 'https://sportsmindmastered.com/',
     },
     {
-      src: '/images/website-3.png',
+      src: '/images/website-3.webp',
       alt: 'Health education platform on multiple devices',
+      width:"600",
+      height:"400",
+      loading:"lazy",
       title: 'Your Health Education',
       description:
         'A health‑education resource offering curated articles, interactive quizzes, and video tutorials to promote wellness literacy.',
@@ -45,6 +55,7 @@ export default function Projects({ className = '' }) {
               key={idx}
                data-aos="fade-up"
       data-aos-delay={idx * 100}
+      aria-label={`Visit project: ${project.title}`}
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
@@ -73,10 +84,13 @@ export default function Projects({ className = '' }) {
               {/* 2) Floating screenshot */}
               <div className="relative px-6 md:px-8 lg:px-6 -mt-6 md:-mt-12 lg:-mt-8 mb-4">
                 <div className="rounded-lg overflow-hidden">
-                  <img
-                    src={project.src}
-                    alt={project.alt}
-                    className="w-full h-auto object-cover"
+                  <Image
+                     src={project.src}
+                     alt={project.alt}
+                     width={project.width}
+                     height={project.height}
+                     className="w-full h-auto object-cover"
+                     loading="lazy"
                   />
                 </div>
               </div>

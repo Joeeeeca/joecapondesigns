@@ -57,6 +57,7 @@
         {/* Primary CTA */}
         <a
         id="project-form-link"
+        aria-label="Tell me about your project — open questionnaire form"
           href="https://docs.google.com/forms/d/e/1FAIpQLSd1WgbA33GUhJsmRPUL43GUk-WPjyedbvb7iZy0py9uGdWgdw/viewform"
           target="_blank"
           rel="noopener noreferrer"
@@ -80,6 +81,7 @@
           <a
             href="mailto:joecapon101@gmail.com"
             id="email-link"
+            aria-label="Send Joe Capon an email"
             target="_blank"
             className="text-accent font-medium hover:underline"
           >

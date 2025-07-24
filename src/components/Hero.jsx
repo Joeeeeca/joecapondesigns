@@ -56,7 +56,7 @@ export default function Hero({ className = '' }) {
               text-light mb-8
               max-w-md sm:max-w-lg lg:max-w-xl
               mx-auto md:mx-0
-              leading-relaxed
+              leading-relaxed font-body
             ">
             I’m Joe, a freelance web developer specializing in fast, accessible,
             modern websites.
@@ -113,14 +113,21 @@ className="md:w-1/2 flex justify-center">
               mb-6 md:mb-0
               
             ">
-            <img
-              src="/images/hero-image.png"
-              alt="Portrait of Joe Capon"
-              className="
-                w-full h-full object-center rounded-full
-                border-4 border-accent shadow-lg shadow-[#FFC75F]/80
-              "
-            />
+        <picture>
+  <source srcSet="/images/hero-image.webp" type="image/webp" />
+  <img
+    src="/images/hero-image.png"
+    alt="Portrait of Joe Capon"
+    width="320"
+    height="320"
+    loading="lazy"
+    decoding="async"
+    className="
+      w-full h-full object-center rounded-full
+      border-4 border-accent shadow-lg shadow-[#FFC75F]/80
+    "
+  />
+</picture>
           </div>
         </motion.div>
       </div>
