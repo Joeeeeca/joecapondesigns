@@ -1,0 +1,14 @@
+{
+  "name": "Joe Capon Designs",
+  "short_name": "JoeCapon",
+  "icons": [
+    {
+      "src": "/images/tab-icon.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1F2937",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

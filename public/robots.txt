@@ -1,0 +1,6 @@
+# Allow all crawlers access to everything
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://joecapondesigns.com/sitemap.xml
