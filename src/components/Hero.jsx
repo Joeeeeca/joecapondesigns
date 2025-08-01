@@ -33,7 +33,7 @@ export default function Hero({ className = '' }) {
             variants={textVariant}
             className="
               text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl
-              font-extrabold mb-6 leading-snug sm:leading-tight tracking-tight
+              font-extrabold font-heading mb-6 leading-snug sm:leading-tight tracking-tight
               max-w-prose mx-auto md:mx-0
             "
           >
@@ -46,9 +46,9 @@ export default function Hero({ className = '' }) {
             animate="visible"
             variants={textVariant}
             className="
-              text-base sm:text-lg md:text-xl text-light mb-8
+              text-base font-body font-normal sm:text-lg md:text-xl text-light mb-8
               max-w-md sm:max-w-lg lg:max-w-xl mx-auto md:mx-0
-              leading-relaxed font-body
+              leading-relaxed
             "
           >
             I’m Joe, a freelance web developer specializing in fast, accessible,
@@ -100,7 +100,7 @@ export default function Hero({ className = '' }) {
     className="relative aspect-square w-44 sm:w-64 md:w-72 lg:w-80 xl:w-90 mb-6 md:mb-0"
   >
     <picture>
-      <source srcSet="/images/hero-image.webp"  sizes="(max-width: 640px) 160px, (max-width: 1024px) 320px, 640px" type="image/webp" />
+      <source srcSet="/images/hero-image.webp" sizes="(max-width: 640px) 160px, (max-width: 1024px) 320px, 640px" type="image/webp" />
       <img
         src="/images/hero-image.png"
         alt="Portrait of Joe Capon"

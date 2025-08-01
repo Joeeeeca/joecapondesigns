@@ -14,7 +14,7 @@ export default function Header() {
         {/* Top Row */}
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="font-bold text-gray-900">
+          <div className="font-bold font-poppins text-gray-900">
             <a href="#home" aria-label="Go to home section">
               Joe Capon Designs
             </a>

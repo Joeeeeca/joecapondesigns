@@ -94,7 +94,7 @@ export default function Contact({ className = '' }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Send an email to Joe Capon"
-            className="text-accent font-medium hover:underline"
+            className="text-accent font-medium hover:underline focus:outline-none focus:ring-4 focus:ring-border-accent/50 rounded"
           >
             joecapon101@gmail.com
           </a>

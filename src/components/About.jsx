@@ -68,10 +68,10 @@ export default function About({ className = '' }) {
           role="group"
           aria-describedby="about-description"
           id="about-description"
-          className="max-w-2xl mx-auto space-y-6 mb-8 text-light"
+          className="max-w-2xl mx-auto space-y-6 mb-8 text-light font-body font-normal"
         >
           <p data-aos="fade-up" data-aos-delay="100">
-            I’m Joe, a <strong className="text-white">24‑year‑old junior web developer</strong> with a passion for creativity and continuous learning. My journey began in college with HTML and CSS, and since then I’ve dedicated myself to expanding my skill set and growing as a developer.
+            I’m Joe, a <strong className="text-white font-semibold">24‑year‑old junior web developer</strong> with a passion for creativity and continuous learning. My journey began in college with HTML and CSS, and since then I’ve dedicated myself to expanding my skill set and growing as a developer.
           </p>
           <p data-aos="fade-up" data-aos-delay="200">
             Whether I’m prototyping in Figma, optimizing performance, or writing accessible, semantic markup, I thrive on striking the right balance between form and function. I’m always eager to tackle new challenges and refine my craft.

@@ -116,7 +116,7 @@ export default function Projects({ className = '' }) {
 
                   {/* 3) Description & CTA */}
                   <div className="px-6 lg:px-2 pb-6 flex flex-col flex-grow">
-                    <p id={descId} className="text-dark flex-grow text-center">
+                    <p id={descId} className="text-dark flex-grow text-center font-body font-normal">
                       {project.description}
                     </p>
                     <span
