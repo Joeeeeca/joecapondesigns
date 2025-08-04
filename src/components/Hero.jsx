@@ -1,6 +1,5 @@
 // src/components/Hero.jsx
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const textVariant = {
   hidden: { opacity: 0, y: 20 },
@@ -25,27 +24,18 @@ export default function Hero({ className = '' }) {
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-6 lg:px-16 space-y-12 md:space-y-0 md:space-x-8">
         {/* — Text Block — */}
         <div className="md:w-1/2 flex flex-col justify-center text-center md:text-left">
-          <motion.h1
-            id="hero-heading"
-            custom={0}
-            initial="hidden"
-            animate="visible"
-            variants={textVariant}
-            className="
+<h1
+            className="fade-slide-up delay-0
               text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl
               font-extrabold font-heading mb-6 leading-snug sm:leading-tight tracking-tight
               max-w-prose mx-auto md:mx-0
             "
           >
             Crafting beautiful web experiences
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            custom={1}
-            initial="hidden"
-            animate="visible"
-            variants={textVariant}
-            className="
+          <p
+            className="fade-slide-up delay-1
               text-base font-body font-normal sm:text-lg md:text-xl text-light mb-8
               max-w-md sm:max-w-lg lg:max-w-xl mx-auto md:mx-0
               leading-relaxed
@@ -53,14 +43,10 @@ export default function Hero({ className = '' }) {
           >
             I’m Joe, a freelance web developer specializing in fast, accessible,
             modern websites.
-          </motion.p>
+          </p>
 
-          <motion.div
-            custom={2}
-            initial="hidden"
-            animate="visible"
-            variants={textVariant}
-            className="flex flex-col sm:flex-row items-center gap-4 mx-auto md:mx-0"
+          <div
+            className="fade-slide-up delay-2 flex flex-col sm:flex-row items-center gap-4 mx-auto md:mx-0"
           >
             <a
               href="#projects"
@@ -86,15 +72,13 @@ export default function Hero({ className = '' }) {
             >
               Contact Me
             </a>
-          </motion.div>
+          </div>
         </div>
 
         {/* — Portrait — */}
-        <motion.div
-  initial={{ scale: 0.8, opacity: 0 }}
-  animate={{ scale: 1, opacity: 1 }}
-  transition={{ delay: 0.6, type: 'spring', stiffness: 70 }}
-  className="md:w-1/2 flex justify-center"
+        <div
+
+  className="md:w-1/2 flex justify-center portrait-animate"
 >
   <div
     className="relative aspect-square w-44 sm:w-64 md:w-72 lg:w-80 xl:w-90 mb-6 md:mb-0"
@@ -106,7 +90,7 @@ export default function Hero({ className = '' }) {
         alt="Portrait of Joe Capon"
         width="320"
         height="320"
-        priority="true"
+        priority
         loading="eager"
         decoding="async"
         className="
@@ -116,7 +100,7 @@ export default function Hero({ className = '' }) {
       />
     </picture>
   </div>
-</motion.div>
+</div>
       </div>
 
       {/* — Inverted‑V Divider — */}
