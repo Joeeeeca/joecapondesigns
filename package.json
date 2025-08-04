@@ -5,13 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "analyze": "cross-env ANALYZE=true next build",
     "postbuild": "node generate-sitemap.js && node scripts/generate-rss.js",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "framer-motion": "^12.23.7",
     "next": "15.3.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

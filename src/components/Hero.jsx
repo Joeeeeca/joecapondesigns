@@ -1,5 +1,6 @@
 // src/components/Hero.jsx
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const textVariant = {
   hidden: { opacity: 0, y: 20 },
@@ -11,13 +12,6 @@ const textVariant = {
 };
 
 export default function Hero({ className = '' }) {
-  const [showImage, setShowImage] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setShowImage(true), 600); // delay in ms
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <section
       id="home"
@@ -31,7 +25,12 @@ export default function Hero({ className = '' }) {
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-6 lg:px-16 space-y-12 md:space-y-0 md:space-x-8">
         {/* — Text Block — */}
         <div className="md:w-1/2 flex flex-col justify-center text-center md:text-left">
-          <h1
+          <motion.h1
+            id="hero-heading"
+            custom={0}
+            initial="hidden"
+            animate="visible"
+            variants={textVariant}
             className="
               text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl
               font-extrabold font-heading mb-6 leading-snug sm:leading-tight tracking-tight
@@ -39,9 +38,13 @@ export default function Hero({ className = '' }) {
             "
           >
             Crafting beautiful web experiences
-          </h1>
+          </motion.h1>
 
-          <p
+          <motion.p
+            custom={1}
+            initial="hidden"
+            animate="visible"
+            variants={textVariant}
             className="
               text-base font-body font-normal sm:text-lg md:text-xl text-light mb-8
               max-w-md sm:max-w-lg lg:max-w-xl mx-auto md:mx-0
@@ -50,9 +53,15 @@ export default function Hero({ className = '' }) {
           >
             I’m Joe, a freelance web developer specializing in fast, accessible,
             modern websites.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 mx-auto md:mx-0">
+          <motion.div
+            custom={2}
+            initial="hidden"
+            animate="visible"
+            variants={textVariant}
+            className="flex flex-col sm:flex-row items-center gap-4 mx-auto md:mx-0"
+          >
             <a
               href="#projects"
               aria-label="View my project portfolio"
@@ -77,36 +86,37 @@ export default function Hero({ className = '' }) {
             >
               Contact Me
             </a>
-          </div>
+          </motion.div>
         </div>
 
-        {/* Portrait */}
-        <div className="md:w-1/2 flex justify-center">
-          <div
-            className={`relative aspect-square w-44 sm:w-64 md:w-72 lg:w-80 xl:w-90 mb-6 md:mb-0
-              transition-opacity transition-transform duration-700 ease-out
-              ${showImage ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-90 invisible'}
-            `}
-          >
-            <picture>
-              <source
-                srcSet="/images/hero-image.webp"
-                sizes="(max-width: 640px) 160px, (max-width: 1024px) 320px, 640px"
-                type="image/webp"
-              />
-              <img
-                src="/images/hero-image.png"
-                alt="Portrait of Joe Capon"
-                width="320"
-                height="320"
-                priority
-                loading="eager"
-                decoding="async"
-                className="object-cover rounded-full border-4 border-accent shadow-lg shadow-[#FFC75F]/80"
-              />
-            </picture>
-          </div>
-        </div>
+        {/* — Portrait — */}
+        <motion.div
+  initial={{ scale: 0.8, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{ delay: 0.6, type: 'spring', stiffness: 70 }}
+  className="md:w-1/2 flex justify-center"
+>
+  <div
+    className="relative aspect-square w-44 sm:w-64 md:w-72 lg:w-80 xl:w-90 mb-6 md:mb-0"
+  >
+    <picture>
+      <source srcSet="/images/hero-image.webp" sizes="(max-width: 640px) 160px, (max-width: 1024px) 320px, 640px" type="image/webp" />
+      <img
+        src="/images/hero-image.png"
+        alt="Portrait of Joe Capon"
+        width="320"
+        height="320"
+        priority
+        loading="eager"
+        decoding="async"
+        className="
+          object-cover rounded-full
+          border-4 border-accent shadow-lg shadow-[#FFC75F]/80
+        "
+      />
+    </picture>
+  </div>
+</motion.div>
       </div>
 
       {/* — Inverted‑V Divider — */}
