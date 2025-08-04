@@ -78,7 +78,7 @@ export default function Hero({ className = '' }) {
         {/* — Portrait — */}
         <div
 
-  className="md:w-1/2 flex justify-center portrait-animate"
+  className="md:w-1/2 flex justify-center"
 >
   <div
     className="relative aspect-square w-44 sm:w-64 md:w-72 lg:w-80 xl:w-90 mb-6 md:mb-0"
