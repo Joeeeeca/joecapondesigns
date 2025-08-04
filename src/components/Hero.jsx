@@ -25,7 +25,7 @@ export default function Hero({ className = '' }) {
         {/* — Text Block — */}
         <div className="md:w-1/2 flex flex-col justify-center text-center md:text-left">
 <h1
-            className="fade-slide-up delay-0
+            className="
               text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl
               font-extrabold font-heading mb-6 leading-snug sm:leading-tight tracking-tight
               max-w-prose mx-auto md:mx-0
@@ -35,7 +35,7 @@ export default function Hero({ className = '' }) {
           </h1>
 
           <p
-            className="fade-slide-up delay-1
+            className="
               text-base font-body font-normal sm:text-lg md:text-xl text-light mb-8
               max-w-md sm:max-w-lg lg:max-w-xl mx-auto md:mx-0
               leading-relaxed
@@ -46,7 +46,7 @@ export default function Hero({ className = '' }) {
           </p>
 
           <div
-            className="fade-slide-up delay-2 flex flex-col sm:flex-row items-center gap-4 mx-auto md:mx-0"
+            className=" flex flex-col sm:flex-row items-center gap-4 mx-auto md:mx-0"
           >
             <a
               href="#projects"
