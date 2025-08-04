@@ -11,10 +11,10 @@ const textVariant = {
 };
 
 export default function Hero({ className = '' }) {
-  const [portraitVisible, setPortraitVisible] = useState(false);
+  const [showImage, setShowImage] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setPortraitVisible(true), 100);
+    const timer = setTimeout(() => setShowImage(true), 600); // delay in ms
     return () => clearTimeout(timer);
   }, []);
 
@@ -80,9 +80,14 @@ export default function Hero({ className = '' }) {
           </div>
         </div>
 
-        {/* — Portrait — */}
+        {/* Portrait */}
         <div className="md:w-1/2 flex justify-center">
-          <div className="relative aspect-square w-44 sm:w-64 md:w-72 lg:w-80 xl:w-90 mb-6 md:mb-0">
+          <div
+            className={`relative aspect-square w-44 sm:w-64 md:w-72 lg:w-80 xl:w-90 mb-6 md:mb-0
+              transition-opacity transition-transform duration-700 ease-out
+              ${showImage ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-90 invisible'}
+            `}
+          >
             <picture>
               <source
                 srcSet="/images/hero-image.webp"
@@ -97,9 +102,7 @@ export default function Hero({ className = '' }) {
                 priority
                 loading="eager"
                 decoding="async"
-                className={`object-cover rounded-full border-4 border-accent shadow-lg shadow-[#FFC75F]/80 portrait-animate ${
-                  portraitVisible ? 'visible' : ''
-                }`}
+                className="object-cover rounded-full border-4 border-accent shadow-lg shadow-[#FFC75F]/80"
               />
             </picture>
           </div>
