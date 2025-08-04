@@ -107,7 +107,8 @@ export default function BlogLayout({ post }) {
             <h3 className="text-xl font-semibold mb-4">Similar Posts</h3>
             <ul className="space-y-6">
               {similarPosts.map(p => (
-                <li key={p.slug}>
+                <li key={p.slug}
+                className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-4 space-y-1 cursor-pointer">
                   <Link href={`/blog/${p.slug}`} className="text-dark hover:text-accent font-medium">
                     {p.title}
                   </Link>
