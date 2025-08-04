@@ -1,5 +1,5 @@
 // src/components/Hero.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const textVariant = {
   hidden: { opacity: 0, y: 20 },
@@ -11,6 +11,13 @@ const textVariant = {
 };
 
 export default function Hero({ className = '' }) {
+  const [portraitVisible, setPortraitVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setPortraitVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section
       id="home"
@@ -24,7 +31,7 @@ export default function Hero({ className = '' }) {
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-6 lg:px-16 space-y-12 md:space-y-0 md:space-x-8">
         {/* — Text Block — */}
         <div className="md:w-1/2 flex flex-col justify-center text-center md:text-left">
-<h1
+          <h1
             className="
               text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl
               font-extrabold font-heading mb-6 leading-snug sm:leading-tight tracking-tight
@@ -45,9 +52,7 @@ export default function Hero({ className = '' }) {
             modern websites.
           </p>
 
-          <div
-            className=" flex flex-col sm:flex-row items-center gap-4 mx-auto md:mx-0"
-          >
+          <div className="flex flex-col sm:flex-row items-center gap-4 mx-auto md:mx-0">
             <a
               href="#projects"
               aria-label="View my project portfolio"
@@ -76,31 +81,29 @@ export default function Hero({ className = '' }) {
         </div>
 
         {/* — Portrait — */}
-        <div
-
-  className="md:w-1/2 flex justify-center"
->
-  <div
-    className="relative aspect-square w-44 sm:w-64 md:w-72 lg:w-80 xl:w-90 mb-6 md:mb-0"
-  >
-    <picture>
-      <source srcSet="/images/hero-image.webp" sizes="(max-width: 640px) 160px, (max-width: 1024px) 320px, 640px" type="image/webp" />
-      <img
-        src="/images/hero-image.png"
-        alt="Portrait of Joe Capon"
-        width="320"
-        height="320"
-        priority
-        loading="eager"
-        decoding="async"
-        className="
-          object-cover rounded-full
-          border-4 border-accent shadow-lg shadow-[#FFC75F]/80
-        "
-      />
-    </picture>
-  </div>
-</div>
+        <div className="md:w-1/2 flex justify-center">
+          <div className="relative aspect-square w-44 sm:w-64 md:w-72 lg:w-80 xl:w-90 mb-6 md:mb-0">
+            <picture>
+              <source
+                srcSet="/images/hero-image.webp"
+                sizes="(max-width: 640px) 160px, (max-width: 1024px) 320px, 640px"
+                type="image/webp"
+              />
+              <img
+                src="/images/hero-image.png"
+                alt="Portrait of Joe Capon"
+                width="320"
+                height="320"
+                priority
+                loading="eager"
+                decoding="async"
+                className={`object-cover rounded-full border-4 border-accent shadow-lg shadow-[#FFC75F]/80 portrait-animate ${
+                  portraitVisible ? 'visible' : ''
+                }`}
+              />
+            </picture>
+          </div>
+        </div>
       </div>
 
       {/* — Inverted‑V Divider — */}

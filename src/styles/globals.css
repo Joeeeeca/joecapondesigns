@@ -61,22 +61,26 @@
     animation-delay: 0.3s;
   }
 
-  @keyframes portraitScaleFade {
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+@keyframes portraitScaleFade {
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
+}
 
-  .portrait-animate {
-    opacity: 0;
-    transform: scale(0.8);
-    animation-name: portraitScaleFade;
-    animation-duration: 0.8s;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1); /* spring-like */
-    animation-delay: 0.6s;
-  }
+.portrait-animate {
+  visibility: hidden;         /* hidden but still takes layout */
+  opacity: 1;                 /* fully opaque */
+  transform: scale(0.8);
+  animation-name: portraitScaleFade;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-delay: 0.6s;
+}
+
+.portrait-animate.visible {
+  visibility: visible;        /* make visible to trigger animation */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -160,4 +164,5 @@ h1, h2, h3, h4 {
   font-weight: 800;
   font-style: normal;
   font-display: swap;
+}
 }
