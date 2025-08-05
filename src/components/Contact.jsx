@@ -43,7 +43,7 @@ export default function Contact({ className = '' }) {
       <div className="container mx-auto px-6 lg:px-16 text-center">
         <h2
           id="contact-heading"
-          className="text-3xl font-bold mb-4 text-dark"
+          className="text-3xl md:text-4xl font-bold mb-6 text-dark"
           data-aos="fade-up"
           data-aos-delay="0"
         >

@@ -32,7 +32,7 @@ export default function Projects({ className = '' }) {
       title: 'Your Health Education',
       description:
         'A health‑education resource offering curated articles, interactive quizzes, and video tutorials to promote wellness literacy.',
-      url: 'https://project-three.example.com',
+      url: 'https://joeeeeca.github.io/Yourhealtheducation/',
     },
   ];
 
@@ -45,7 +45,7 @@ export default function Projects({ className = '' }) {
       <div className="container mx-auto px-6 md:px-20 lg:px-8 xl:px-2">
         <h2
           id="projects-heading"
-          className="text-3xl font-bold text-dark mb-8 text-center lg:text-left xl:text-center"
+          className="text-3xl md:text-4xl font-bold mb-6 text-dark text-center lg:text-left xl:text-center"
           data-aos="fade-up"
           data-aos-delay="0"
         >
@@ -62,7 +62,8 @@ export default function Projects({ className = '' }) {
             const descId = `project-desc-${idx}`;
 
             return (
-              <li key={project.title} className="h-full">
+              <li key={project.title} className="h-full   transition-transform duration-500 ease-out
+  hover:-translate-y-4 hover:shadow-2xl">
                 <a
                   data-aos="fade-up"
                   data-aos-delay={idx * 100}
@@ -72,11 +73,10 @@ export default function Projects({ className = '' }) {
                   aria-labelledby={titleId}
                   aria-describedby={descId}
                   className="
-                    group relative block h-full rounded-xl sm:mx-auto 
-                    bg-white shadow-lg overflow-hidden
-                    transform transition
-                    hover:-translate-y-2 hover:shadow-2xl
-                    focus:outline-none focus-visible:ring-4 focus-visible:ring-border-accent/50
+           group relative block h-full rounded-xl sm:mx-auto 
+  bg-white shadow-lg overflow-hidden
+
+  focus:outline-none focus-visible:ring-4 focus-visible:ring-border-accent/50
                   "
                 >
                   {/* 1) Gradient header with angled cut (decorative) */}

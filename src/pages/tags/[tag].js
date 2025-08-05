@@ -17,7 +17,7 @@ export default function TagPage() {
 
       <section className="min-h-screen py-24 px-6 lg:px-16 bg-gray-50 text-dark">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold mb-8">
+          <h1 className="text-4xl md:text-5xl font-bold font-heading mb-8 text-center">
             Posts tagged <span className="text-accent">#{tag}</span>
           </h1>
 

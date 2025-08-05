@@ -66,10 +66,12 @@ export default function Hero({ className = '' }) {
               href="#projects"
               aria-label="View my project portfolio"
               className="
-                block w-full sm:w-auto text-center rounded-full bg-accent text-dark
-                px-6 py-3 sm:px-8 sm:py-4 md:px-4 text-base sm:text-lg font-semibold
-                shadow-lg transition hover:brightness-110 hover:shadow-xl
-                focus:outline-none focus:ring-4 focus:ring-border-accent/50
+        block w-full sm:w-auto text-center rounded-full bg-accent text-dark
+      px-6 py-3 sm:px-8 sm:py-4 md:px-4 text-base sm:text-lg font-semibold
+      shadow-lg shadow-[#FFC75F]/80
+      hover:brightness-110 hover:scale-105
+      transition-transform duration-200 ease-in-out
+      focus:outline-none focus:ring-4 focus:ring-black
               "
             >
               View My Work
@@ -78,10 +80,13 @@ export default function Hero({ className = '' }) {
               href="#contact"
               aria-label="Go to the contact section to get in touch"
               className="
-                block w-full sm:w-auto text-center rounded-full border-2 border-accent text-accent
-                px-6 py-3 sm:px-8 sm:py-4 md:px-4 text-base sm:text-lg font-semibold
-                transition hover:bg-accent hover:text-white
-                focus:outline-none focus:ring-4 focus:ring-border-accent/50
+    block w-full sm:w-auto text-center rounded-full border-2 border-accent/60 text-accent/80
+    bg-transparent    hover:bg-[#FFC75F] hover:text-[#1F2937]
+    px-6 py-3 sm:px-8 sm:py-4 md:px-4 text-base sm:text-lg font-semibold
+  hover:text-dark
+    transition-colors duration-200 ease-in-out
+    focus:outline-none focus:ring-4 focus:ring-border-accent/50
+
               "
             >
               Contact Me
