@@ -8,8 +8,10 @@ export default function CookieConsent() {
     console.log("CookieConsent check → value in localStorage:", consent);
 
     if (!consent) {
-      console.log("No consent found → showing banner");
-      setIsVisible(true);
+      console.log("No consent found → showing banner after delay");
+      setTimeout(() => {
+        setIsVisible(true);
+      }, 300); // Delay before slide in
     } else if (consent === "accepted") {
       console.log("Consent already accepted → loading GA");
       loadGoogleAnalytics();
@@ -52,11 +54,13 @@ export default function CookieConsent() {
     document.head.appendChild(script2);
   };
 
-  if (!isVisible) return null;
-
   return (
-    <div className="fixed bottom-0 left-0 w-full bg-dark text-white p-4 z-50 shadow-lg">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <div
+      className={`fixed bottom-0 left-0 w-full bg-dark text-white p-4 z-50 shadow-lg transform transition-all duration-500 ease-out
+        ${isVisible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}
+      `}
+    >
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
         <p className="text-sm">
           We use cookies to improve your experience and analyze site traffic.
           See our{" "}
@@ -65,16 +69,16 @@ export default function CookieConsent() {
           </a>
           .
         </p>
-        <div className="flex gap-2">
+        <div className="flex gap-2 justify-center">
           <button
             onClick={declineCookies}
-            className="bg-gray-500 text-white px-4 py-2 rounded-full font-semibold hover:brightness-110 transition duration-200"
+            className="bg-gray-500 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full font-semibold text-sm md:text-base hover:brightness-110 transition duration-200"
           >
             Decline
           </button>
           <button
             onClick={acceptCookies}
-            className="bg-accent text-dark px-4 py-2 rounded-full font-semibold hover:brightness-110 transition duration-200"
+            className="bg-accent text-dark px-3 py-1.5 md:px-4 md:py-2 rounded-full font-semibold text-sm md:text-base hover:brightness-110 transition duration-200"
           >
             Accept
           </button>
