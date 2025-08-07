@@ -90,11 +90,10 @@ export default function BlogLayout({ post }) {
               </div>
             </div>
 
-            <article className="prose lg:prose-lg max-w-none">
-              {post.content.trim().split('\n').map((para, idx) =>
-                para ? <p key={idx}>{para}</p> : null
-              )}
-            </article>
+            <article
+  className="prose lg:prose-lg max-w-none"
+  dangerouslySetInnerHTML={{ __html: post.content }}
+/>
 
             <div className="mt-12">
               <Link href="/blog" className="text-accent hover:underline">
