@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+:root {
+  --color-dark-bg:    #1F2937;
+  --color-light-bg:   #F3F4F6;   /* same as Tailwind’s gray‑100 */
+  --color-accent:     #FFC75F;
+
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+}
+
+@theme {
+  --breakpoint-sm:480px;
+  --breakpoint-md:768px;
+  --breakpoint-lg:1024px;
+  --breakpoint-xl:1400px;
+  --breakpoint-xxl:2000px;
+}
+
+@layer utilities {
+  .bg-dark   { background-color: var(--color-dark-bg); }
+  .bg-light  { background-color: var(--color-light-bg); }
+  .bg-accent { background-color: var(--color-accent);  }
+
+  /* text colours */
+  .text-dark   { color: var(--color-dark-bg);   }
+  .text-light  { color: var(--color-light-bg);  }
+  .text-accent { color: var(--color-accent);    }
+
+  /* borders/outlines */
+  .border-accent { border-color: var(--color-accent); }
+
+  /* Animation keyframes and utility classes */
+  @keyframes fadeSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-slide-up {
+    animation-name: fadeSlideUp;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    opacity: 0; /* Start hidden */
+  }
+
+  /* Staggered delays */
+  .delay-0 {
+    animation-delay: 0s;
+  }
+  .delay-1 {
+    animation-delay: 0.15s;
+  }
+  .delay-2 {
+    animation-delay: 0.3s;
+  }
+
+@keyframes portraitScaleFade {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.portrait-animate {
+  visibility: hidden;         /* hidden but still takes layout */
+  opacity: 1;                 /* fully opaque */
+  transform: scale(0.8);
+  animation-name: portraitScaleFade;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-delay: 0.6s;
+}
+
+.portrait-animate.visible {
+  visibility: visible;        /* make visible to trigger animation */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family:var(--font-body);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+}
+
+/* Roboto */
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto/static/Roboto-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto/static/Roboto-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto/static/Roboto-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Poppins */
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins/Poppins-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins/Poppins-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins/Poppins-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins/Poppins-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins/Poppins-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+}

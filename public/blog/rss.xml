@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Joe Capon Designs — Blog</title>
+    <link>https://joecapondesigns.com/blog</link>
+    <description>Insights and tips on web development and design.</description>
+    
+      <item>
+        <title>Why Hire a Freelance Developer Instead of an Agency?</title>
+        <link>https://joecapondesigns.com/blog/freelance-vs-agency</link>
+        <pubDate>Mon, 28 Jul 2025 23:00:00 GMT</pubDate>
+        <description></description>
+      </item>
+    
+
+      <item>
+        <title>Web Design Tips for Small Businesses</title>
+        <link>https://joecapondesigns.com/blog/design-tips-small-business</link>
+        <pubDate>Thu, 31 Jul 2025 23:00:00 GMT</pubDate>
+        <description></description>
+      </item>
+    
+  </channel>
+</rss>
